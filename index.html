@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Reference - Book Generator</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <header style="padding-bottom: 15px;">
+        <h1>Book Generation API</h1>
+        <button id="menuToggle">Menu</button>
+    </header>
+    <nav id="navbar">
+        <ul>
+            <li><a href="#intro">Introduction</a></li>
+            <li><a href="#">Authorization</a></li>
+            <li><a href="#api-endpoints">API Endpoints</a></li>
+            <li><a href="#guide">Quick Start Guide</a></li>
+            <li><a href="#">Sample Code</a></li>
+            <li><a href="#cost">Pricing Details</a></li>
+            <li><button id="themeToggle" style="background-color: transparent; margin-bottom: 12px;">Switch Mode</button></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="intro">
+            <h2>Introduction</h2>
+            <p>The Book Generation API offers a robust solution for generating books across diverse topics using
+                advanced language models. This guide covers how to authenticate, access various endpoints, and provides
+                examples to get you started.</p>
+        </section>
+
+        <section id="api-endpoints">
+            <h2>API Endpoints</h2>
+            <h3>Book Generation</h3>
+            <p><span class="http-method">POST</span> <span class="endpoint">/api/generate-book</span></p>
+            <h4>Required Parameters</h4>
+            <div class="table-responsive">
+                <table class="params-table">
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                    <tr>
+                        <td>api_provider</td>
+                        <td>string</td>
+                        <td>Specify the API provider. Options: "openai" or "together"</td>
+                    </tr>
+                    <tr>
+                        <td>model_version</td>
+                        <td>string</td>
+                        <td>The specific model version (e.g., "gpt-3.5-turbo", "gpt-4", "llama-2-70b")</td>
+                    </tr>
+                    <tr>
+                        <td>subject</td>
+                        <td>string</td>
+                        <td>The primary subject or theme of the book</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+
+        <section id="guide">
+            <h2>Quick Start Guide</h2>
+            <h3>Step 1: Get an API Key</h3>
+            <p>Click the button in the Authorization section above to generate an API key.</p>
+
+            <h3>Step 2: Submit Your Request</h3>
+            <p>Use your preferred programming language or tool to send a POST request to the /api/generate-book
+                endpoint. Include your API key in the header and the necessary parameters in the request body.</p>
+
+            <h3>Step 3: Process the Response</h3>
+            <p>The API will return a response with a job ID. Use this ID to track the status of your book generation
+                job.</p>
+
+            <h3>Step 4: Retrieve the Final Book</h3>
+            <p>Once the process is complete, you can retrieve the generated book using the job ID (retrieval endpoint
+                coming soon).</p>
+        </section>
+        <section id="cost">
+            <h2>API Pricing</h2>
+            <p>Our API pricing model depends on the chosen model and the number of tokens processed. Below is an
+                overview:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>API Provider</th>
+                        <th>Model</th>
+                        <th>Cost per 1K tokens</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>OpenAI</td>
+                        <td>GPT-3.5</td>
+                        <td>$0.002</td>
+                    </tr>
+                    <tr>
+                        <td>OpenAI</td>
+                        <td>GPT-4</td>
+                        <td>$0.03</td>
+                    </tr>
+                    <tr>
+                        <td>Together AI</td>
+                        <td>Llama-2-70b</td>
+                        <td>$0.0008</td>
+                    </tr>
+                    <tr>
+                        <td>Together AI</td>
+                        <td>Llama-2-13b</td>
+                        <td>$0.0006</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>Token Calculation</h3>
+            <p>On average, 1 token is roughly equivalent to 4 characters or 0.75 words. For a more precise estimate, use
+                our token calculator.</p>
+            <h3>Billing Information</h3>
+            <p>You will be billed based on the number of tokens consumed during book generation. Detailed usage and
+                billing reports are accessible via your account dashboard.</p>
+        </section>
+    </main>
+    <script src="/script.js"></script>
+</body>
+
+</html>
